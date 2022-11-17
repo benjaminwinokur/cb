@@ -1,0 +1,36 @@
+apiVersion: couchbase.com/v2
+kind: CouchbaseBucket
+metadata:
+  name: default
+---
+apiVersion: couchbase.com/v2
+kind: CouchbaseCluster
+metadata:
+  name: cb-example
+spec:
+  backup:
+    managed: true 
+    image: couchbase/operator-backup:1.3.0 
+    serviceAccountName: couchbase-backup 
+  image: couchbase/server:7.0.3
+  security:
+    adminSecret: cb-example-auth
+  buckets:
+    managed: true 
+  servers:
+  - size: 2
+    name: all_services
+    services:
+    - data
+    - index
+    - query
+    volumeMounts: 
+      default: couchbase
+  volumeClaimTemplates:
+  - metadata:
+       name: couchbase
+    spec:
+      storageClassName: local-path
+      resources:
+        requests:
+          storage: 1Gi
