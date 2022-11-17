@@ -6,7 +6,7 @@ metadata:
 apiVersion: couchbase.com/v2
 kind: CouchbaseCluster
 metadata:
-  name: cb-example
+  name: couchbase
 spec:
   backup:
     managed: true 
