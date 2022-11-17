@@ -17,6 +17,17 @@ spec:
         path: /
         pathType: ImplementationSpecific
 ---
+apiVersion: v1
+data:
+  password: cGFzc3dvcmQ=
+  username: QWRtaW5pc3RyYXRvcg==
+kind: Secret
+metadata:
+  labels:
+    argocd.argoproj.io/instance: couchbase-operator
+  name: auth-couchbase-admin
+type: Opaque
+---
 apiVersion: couchbase.com/v2
 kind: CouchbaseCluster
 metadata:
@@ -28,7 +39,7 @@ spec:
     serviceAccountName: couchbase-backup 
   image: couchbase/server:7.0.3
   security:
-    adminSecret: auth-couchbase-operator-couchbase-cluster
+    adminSecret:  auth-couchbase-admin
     rbac:
       managed: true
   buckets:
