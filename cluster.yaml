@@ -29,6 +29,23 @@ spec:
     - eventing
     volumeMounts: 
       default: couchbase
+  networking:
+    adminConsoleServiceTemplate:
+      spec:
+        type: NodePort
+    adminConsoleServices:
+      - data
+    disableUIOverHTTP: false
+    disableUIOverHTTPS: false
+    exposeAdminConsole: true
+    exposedFeatureServiceTemplate:
+      spec:
+        type: NodePort
+    exposedFeatures:
+      - client
+      - xdcr
+    waitForAddressReachable: 10m
+    waitForAddressReachableDelay: 2m
   volumeClaimTemplates:
   - metadata:
        name: couchbase
