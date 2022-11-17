@@ -77,7 +77,7 @@ spec:
   - metadata:
        name: couchbase
     spec:
-      storageClassName: local-path
+      storageClassName: hostpath
       resources:
         requests:
-          storage: 1Gi
+          storage: 2Gi
