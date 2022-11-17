@@ -29,6 +29,7 @@ spec:
     - search
     - analytics
     - eventing
+    - backup
     volumeMounts: 
       default: couchbase
   networking:
