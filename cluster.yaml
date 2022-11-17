@@ -24,6 +24,9 @@ spec:
     - data
     - index
     - query
+    - search
+    - analytics
+    - eventing
     volumeMounts: 
       default: couchbase
   volumeClaimTemplates:
