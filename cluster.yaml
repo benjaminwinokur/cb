@@ -14,7 +14,7 @@ spec:
     serviceAccountName: couchbase-backup 
   image: couchbase/server:7.0.3
   security:
-    adminSecret: cb-example-auth
+    adminSecret: auth-couchbase-operator-couchbase-cluster
   buckets:
     managed: true 
   servers:
