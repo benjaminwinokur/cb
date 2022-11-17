@@ -9,7 +9,7 @@ metadata:
   name: couchbase
 spec:
   backup:
-    managed: true 
+    managed: false 
     image: couchbase/operator-backup:1.3.0 
     serviceAccountName: couchbase-backup 
   image: couchbase/server:7.0.3
