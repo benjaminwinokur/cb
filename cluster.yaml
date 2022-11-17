@@ -46,8 +46,8 @@ spec:
     exposedFeatures:
       - client
       - xdcr
-    waitForAddressReachable: 10m
-    waitForAddressReachableDelay: 2m
+    waitForAddressReachable: 10m0s
+    waitForAddressReachableDelay: 2m0s
   volumeClaimTemplates:
   - metadata:
        name: couchbase
